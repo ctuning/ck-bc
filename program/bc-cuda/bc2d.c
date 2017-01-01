@@ -715,7 +715,8 @@ int main(int argc, char *argv[]) {
 	int rootset = 0;
 
 	int cntask;
-	char *gfile=NULL, *p=NULL, c, *ofile=NULL;
+	char *gfile=NULL, *p=NULL, *ofile=NULL;
+	signed char opt;
 
 	TIMER_DEF(0);
 
@@ -748,12 +749,12 @@ int main(int argc, char *argv[]) {
 		fprintf(stdout,"%s\n",cmdLine);
 	}
 
-	while((c = getopt(argc, argv, "o:p:amhDR:Uf:n:r:S:E:N:H:")) != EOF) {
+	while((opt = getopt(argc, argv, "o:p:amhDR:Uf:n:r:S:E:N:H:")) != EOF) {
 #define CHECKRTYPE(exitval,opt) {\
 		if (exitval == gread) prexit("Unexpected option -%c!\n", opt);\
 				else gread = !exitval;\
 		}
-		switch (c) {
+		switch (opt) {
 			case 'H' :
 					if (0 == sscanf(optarg, "%d", &heuristic)) prexit("Invalid Heuristic Option (-H): %s\n", optarg);					
 					if ( heuristic >= 2 && ntask > 1) prexit("2-degree Heuristic is allowed in single-gpu configuration (-H): %s\n", optarg);
