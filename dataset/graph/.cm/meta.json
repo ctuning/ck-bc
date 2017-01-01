@@ -1,0 +1,12 @@
+{
+  "dataset_files": [
+    "facebook_combined.txt"
+  ], 
+  "tags": [
+    "dataset", 
+    "graph", 
+    "snap", 
+    "facebook", 
+    "small"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "dataset_files": [
+    "text1.txt"
+  ], 
+  "tags": [
+    "project1", 
+    "experiment1"
+  ]
+}

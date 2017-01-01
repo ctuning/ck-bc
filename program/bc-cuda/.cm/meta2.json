@@ -1,0 +1,36 @@
+{
+  "build_compiler_vars": {}, 
+  "compile_deps": {
+    "compiler": {
+      "env_key": "COMPILER", 
+      "local": "yes", 
+      "name": "CUDA compiler", 
+      "sort": 20, 
+      "tags": "compiler,lang-c-cuda"
+    }
+  }, 
+  "compiler_env": "CK_NVCC", 
+  "data_name": "bc-cuda", 
+  "main_language": "c", 
+  "process_in_tmp": "yes", 
+  "program": "yes", 
+  "run_cmds": {
+    "default": {
+      "ignore_return_code": "no", 
+      "run_time": {
+        "run_cmd_main": "$#BIN_FILE#$ "
+      }
+    }
+  }, 
+  "source_files": [
+    "cuda_kernels.cu",
+    "bc2d.ch"
+  ], 
+  "tags": [
+    "tool", 
+    "bc", 
+    "lang-c-cuda", 
+    "cuda"
+  ], 
+  "target_file": "ck-bc-cuda"
+}
